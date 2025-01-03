@@ -1,6 +1,6 @@
 ### TASK2
 
-This document summarizes the steps taken during the itask 2. The dataset contains information about cars, including their brand, model, manufacturing year, type, rating, color, duty, fuel type, cylinder count, gear type, capacity, odometer reading, airbags, and price.
+This document summarizes the steps taken during the task 2. The dataset contains information about cars, including their brand, model, manufacturing year, type, rating, color, duty, fuel type, cylinder count, gear type, capacity, odometer reading, airbags, and price.
 
 ---
 
