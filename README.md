@@ -422,4 +422,75 @@ This document summarizes the steps taken during the itask 2. The dataset contain
   - **Enhanced Stacking Regressor**: MAE = **5970.75**
 
 ---
+### Model Evaluation and Test Submission
+
+---
+
+#### **1. Model Evaluation**
+- **Best Model**:
+  - **Stacking Regressor** with **Extra Trees**, **Bagging**, and **Random Forest** was selected as the best model based on its performance during cross-validation.
+- **Evaluation on Test Set**:
+  - The model was fitted on the training data and used to make predictions on the test set.
+  - **Mean Absolute Error (MAE)** on the test set: **5477.63**.
+  - This indicates that the model's predictions are, on average, within **$5477.63** of the actual prices.
+
+---
+
+#### **2. Test Submission**
+- **Loading Test Data**:
+  - The test data was loaded from the provided CSV file (`test.csv`).
+  - The `ID` column was separated for the final submission.
+- **Data Cleaning**:
+  - Applied the same cleaning and preprocessing steps used for the training data:
+    - **Brand**: Standardized brand names.
+    - **VehicleModel**: Cleaned and standardized model names.
+    - **ManufacturingYear**: Extracted and validated years.
+    - **Type**: Standardized vehicle types.
+    - **rating**: Ensured non-negative values.
+    - **Duty**: Extracted numeric values from text.
+    - **fuel**: Standardized fuel types.
+    - **CylinderCount**: Extracted numeric values.
+    - **type of gear**: Standardized gear types.
+    - **capacity**: Extracted numeric values.
+    - **Odometer**: Extracted numeric values.
+    - **airbags**: Capped values between 0 and 12.
+    - **EngineSize**: Categorized engine sizes into Small, Medium, and Large.
+    - **SafetyScore**: Categorized airbags into Low, Medium, and High.
+- **Missing Value Imputation**:
+  - Used the `transform_test_data` function to impute missing values based on the imputation rules learned from the training data.
+- **Preprocessing**:
+  - Applied the same preprocessing pipeline (`full_pipeline_Preprocessing`) used for the training data to the test data.
+- **Predictions**:
+  - Used the trained **Stacking Regressor** to make predictions on the preprocessed test data.
+- **Submission File**:
+  - Created a submission file (`submission.csv`) with the `ID` and predicted `price` columns.
+  - The file contains **3000 rows** of predictions.
+
+---
+
+#### **3. Submission File Preview**
+- **Columns**:
+  - `ID`: Unique identifier for each car.
+  - `price`: Predicted price for each car.
+- **Example Rows**:
+  ```
+  ID      price
+  5634    9043.12
+  16689   12963.42
+  13457   11081.63
+  4555    15573.44
+  9726    9771.73
+  ...
+  ```
+
+---
+
+#### **4. Summary**
+- **Model Performance**:
+  - The **Stacking Regressor** achieved an MAE of **5477.63** on the test set, demonstrating strong predictive performance.
+- **Test Submission**:
+  - The test data was cleaned, preprocessed, and used to generate predictions.
+  - The final submission file (`submission.csv`) is ready for submission.
+
+---
 
