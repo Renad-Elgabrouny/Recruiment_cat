@@ -1,6 +1,6 @@
-### README: Data Exploration and Initial Cleaning
+### TASK2
 
-This document summarizes the steps taken during the initial exploration and cleaning of the dataset provided for the recruitment task. The dataset contains information about cars, including their brand, model, manufacturing year, type, rating, color, duty, fuel type, cylinder count, gear type, capacity, odometer reading, airbags, and price.
+This document summarizes the steps taken during the itask 2. The dataset contains information about cars, including their brand, model, manufacturing year, type, rating, color, duty, fuel type, cylinder count, gear type, capacity, odometer reading, airbags, and price.
 
 ---
 
@@ -196,8 +196,7 @@ This document summarizes the steps taken during the initial exploration and clea
 - **airbags**: Capped values between 0 and 12.
 
 ---
-### README: Analysis Phase
-
+### Analysis Phase
 ---
 
 #### **1. Price Distribution Across Top 15 Brands**
@@ -284,10 +283,7 @@ This document summarizes the steps taken during the initial exploration and clea
 - **Luxury Brands**: SsangYong is the most luxurious brand based on average price.
 
 ---
-### README: Preprocessing and Modeling Phase
-
-This document summarizes the steps taken during the preprocessing and modeling phase of the dataset provided for the recruitment task. The dataset contains information about cars, including their brand, model, manufacturing year, type, rating, color, duty, fuel type, cylinder count, gear type, capacity, odometer reading, airbags, and price.
-
+### Preprocessing and Modeling Phase
 ---
 
 #### **1. Feature Engineering**
