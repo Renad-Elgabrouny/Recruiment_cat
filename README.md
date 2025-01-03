@@ -353,3 +353,73 @@ This document summarizes the steps taken during the itask 2. The dataset contain
   - The same preprocessing steps were applied to the testing data using the transformations learned from the training data.
 
 ---
+### Modeling Phase
+---
+
+#### **1. Model Selection and Evaluation**
+- **Models Evaluated**:
+  - **Linear Regression**
+  - **SGDRegressor**
+  - **Decision Tree Regressor**
+  - **Random Forest Regressor**
+  - **Support Vector Regressor (SVR)**
+  - **Ridge Regression**
+  - **Lasso Regression**
+- **Evaluation Metrics**:
+  - **Mean Absolute Error (MAE)**
+  - **R-squared (R²)**
+- **Results**:
+  - **Random Forest Regressor** performed the best with an MAE of **6011.76** and an R² of **0.470**.
+  - **SVR** performed the worst with an MAE of **9118.32** and a negative R².
+
+---
+
+#### **2. Hyperparameter Tuning for Random Forest**
+- **Grid Search**:
+  - Performed a grid search to find the best hyperparameters for the **Random Forest Regressor**.
+  - **Best Parameters**:
+    - `max_depth`: None
+    - `max_features`: 'sqrt'
+    - `min_samples_leaf`: 2
+    - `min_samples_split`: 5
+    - `n_estimators`: 200
+- **Results**:
+  - The tuned model achieved an MAE of **6495.23** and an R² of **0.430**.
+
+---
+
+#### **3. Ensemble Models**
+- **Voting Regressor**:
+  - Combined predictions from **LGBMRegressor**, **CatBoostRegressor**, **XGBRegressor**, and **GradientBoostingRegressor**.
+  - Achieved an MAE of **6175.60**.
+- **Stacking Regressor**:
+  - Combined predictions from the same models as the Voting Regressor, with **LinearRegression** as the final estimator.
+  - Achieved an MAE of **6179.01**.
+
+---
+
+#### **4. Enhanced Ensemble Models**
+- **Added Extra Trees and Bagging**:
+  - Enhanced the Stacking Regressor by adding **ExtraTreesRegressor** and **BaggingRegressor**.
+  - Achieved an MAE of **5972.02**.
+- **Added Random Forest**:
+  - Further enhanced the Stacking Regressor by adding **RandomForestRegressor**.
+  - Achieved an MAE of **5970.75**.
+- **Voting Regressor with Additional Models**:
+  - Combined predictions from all models, including **RandomForestRegressor**.
+  - Achieved an MAE of **6177.18**.
+
+---
+
+#### **5. Summary of Results**
+- **Best Performing Model**:
+  - **Stacking Regressor** with **Extra Trees**, **Bagging**, and **Random Forest** achieved the lowest MAE of **5970.75**.
+- **Comparison**:
+  - **Random Forest Regressor**: MAE = **6011.76**, R² = **0.470**
+  - **Tuned Random Forest Regressor**: MAE = **6495.23**, R² = **0.430**
+  - **Voting Regressor**: MAE = **6175.60**
+  - **Stacking Regressor**: MAE = **6179.01**
+  - **Enhanced Stacking Regressor**: MAE = **5970.75**
+
+---
+
